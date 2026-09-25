@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login..</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="login.css">
+    <!-- font family -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <div class="page">
+        <div class="container">
+            <div class="logo-section">
+                <img src="img/Dia.png" alt="Dia Vision Logo">
+
+                <h1>Dia Vision</h1>
+                <p>Advanced AI Screening for Diabetic Retinopathy</p>
+            </div>
+
+            <div class="roletab">
+                <button class="role" type="button" data-role="patient">
+                    Patient
+                </button>
+
+                <button class="role" type="button" data-role="doctor">
+                    Doctor
+                </button>
+            </div>
+
+            <div class="input-container">
+
+                <i class="fa-regular fa-user"></i>
+
+                <input type="text" id="username" required autocomplete="username" placeholder="Patient ID or Email">
+
+            </div>
+
+            <div class="input-container">
+                <i class="fa-solid fa-lock"></i>
+
+                <input type="password" id="password" required autocomplete="current-password" placeholder="Patient Password">
+
+                <i class="fa-regular fa-eye password-toggle" id="eye" onclick="showPassword()"></i>
+            </div>
+
+            <div class="option">
+                <label>
+                    <input type="checkbox" name="Reminder me" id="remember">
+                    <span>
+                        Reminder me
+                    </span>
+                </label>
+                <a href="#">
+                    Forget Password
+                </a>
+            </div>
+            <button type="button" class="login-btn" onclick="loginUser()">Login</button>
+
+            <div class="register">
+                    <span>
+                        New Patient?
+                    </span>
+
+                    <a href="#">Create an account</a>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-link">
+
+                <a href="#">
+                    About Dia Vision
+                </a>
+                <a href="#">
+                    Consultant Credentialing
+                </a>
+                <a href="#">
+                    Terms Of Services
+                </a>
+                <a href="#">
+                    Security Policy
+                </a>
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+            </div>
+            <div class="copyrights">
+                Dia Vision
+            </div>
+        </footer>
+    </div>
+    
+        <!-- JavaScript -->
+
+    <script>
+
+        /* =================================
+   SELECTED ROLE
+================================= */
+
+        let selectedRole = "patient";
+
+
+        /* =================================
+           GET ELEMENTS
+        ================================= */
+
+        const roles =
+            document.querySelectorAll(".role");
+
+
+        const usernameInput =
+            document.getElementById("username");
+
+
+        const passwordInput =
+            document.getElementById("password");
+
+
+        /* =================================
+           PATIENT / DOCTOR SELECTION
+        ================================= */
+
+        roles.forEach(function (role) {
+
+            role.addEventListener(
+                "click",
+                function () {
+
+
+                    /* Remove active class */
+
+                    roles.forEach(function (item) {
+
+                        item.classList.remove("active");
+
+                    });
+
+
+                    /* Add active class */
+
+                    this.classList.add("active");
+
+
+                    /* Store selected role */
+
+                    selectedRole =
+                        this.dataset.role;
+
+
+                    /* =================================
+                       PATIENT
+                    ================================= */
+
+                    if (selectedRole === "patient") {
+
+                        usernameInput.placeholder =
+                            "Patient ID or Email";
+
+                        passwordInput.placeholder =
+                            "Patient Password";
+
+                    }
+
+
+                    /* =================================
+                       DOCTOR
+                    ================================= */
+
+                    else if (selectedRole === "doctor") {
+
+                        usernameInput.placeholder =
+                            "Doctor ID or Email";
+
+                        passwordInput.placeholder =
+                            "Doctor Password";
+
+                    }
+
+                }
+            );
+
+        });
+
+
+
+        /* =================================
+           SHOW / HIDE PASSWORD
+        ================================= */
+
+        function showPassword() {
+
+
+            const password =
+                document.getElementById("password");
+
+
+            const eye =
+                document.getElementById("eye");
+
+
+            if (password.type === "password") {
+
+
+                password.type = "text";
+
+
+                eye.classList.remove(
+                    "fa-eye"
+                );
+
+
+                eye.classList.add(
+                    "fa-eye-slash"
+                );
+
+
+            }
+
+            else {
+
+
+                password.type = "password";
+
+
+                eye.classList.remove(
+                    "fa-eye-slash"
+                );
+
+
+                eye.classList.add(
+                    "fa-eye"
+                );
+
+            }
+
+        }
+
+
+
+        /* =================================
+           LOGIN
+        ================================= */
+
+        function loginUser() {
+
+
+            const username =
+                document
+                    .getElementById("username")
+                    .value
+                    .trim();
+
+
+            const password =
+                document
+                    .getElementById("password")
+                    .value
+                    .trim();
+
+
+            const remember =
+                document
+                    .getElementById("remember")
+                    .checked;
+
+
+
+            /* =================================
+               USERNAME VALIDATION
+            ================================= */
+
+            if (username === "") {
+
+
+                if (selectedRole === "patient") {
+
+                    alert(
+                        "Please enter your Patient ID or Email."
+                    );
+
+                }
+
+                else {
+
+                    alert(
+                        "Please enter your Doctor ID or Email."
+                    );
+
+                }
+
+
+                usernameInput.focus();
+
+                return;
+
+            }
+
+
+
+            /* =================================
+               PASSWORD VALIDATION
+            ================================= */
+
+            if (password === "") {
+
+
+                if (selectedRole === "patient") {
+
+                    alert(
+                        "Please enter your Patient Password."
+                    );
+
+                }
+
+                else {
+
+                    alert(
+                        "Please enter your Doctor Password."
+                    );
+
+                }
+
+
+                passwordInput.focus();
+
+                return;
+
+            }
+
+
+
+            /* =================================
+               PATIENT LOGIN
+            ================================= */
+
+            if (selectedRole === "patient") {
+
+
+                console.log(
+                    "Patient Login"
+                );
+
+
+                console.log(
+                    "Patient ID / Email:",
+                    username
+                );
+
+
+                console.log(
+                    "Remember me:",
+                    remember
+                );
+
+
+                /*
+                =================================
+                DJANGO CONNECTION LATER
+                =================================
+        
+                Replace this alert with:
+        
+                window.location.href =
+                    "/patient/login/";
+        
+                */
+
+
+                alert(
+                    "Patient login selected."
+                );
+
+            }
+
+
+
+            /* =================================
+               DOCTOR LOGIN
+            ================================= */
+
+            else if (selectedRole === "doctor") {
+
+
+                console.log(
+                    "Doctor Login"
+                );
+
+
+                console.log(
+                    "Doctor ID / Email:",
+                    username
+                );
+
+
+                console.log(
+                    "Remember me:",
+                    remember
+                );
+
+
+                /*
+                =================================
+                DJANGO CONNECTION LATER
+                =================================
+        
+                Replace this alert with:
+        
+                window.location.href =
+                    "/doctor/login/";
+        
+                */
+
+
+                alert(
+                    "Doctor login selected."
+                );
+
+            }
+
+        }
+    </script>
+</body>
+</html>
