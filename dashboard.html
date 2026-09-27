@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dia Vision — Doctor Dashboard</title>
+  <link rel="stylesheet" href="dashbord.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">
+        <img src="img/doc_dashbord.jpeg" alt="Dia Vision Logo">
+      </div>
+      <div class="brand-name"><span>Dia</span> Vision</div>
+    </div>
+
+    <div class="menu-title">MAIN MENU</div>
+
+    <nav class="side-nav">
+      <a class="nav-item active" href="#" data-section="Dashboard">
+        <svg><use href="#icon-home"></use></svg><span>Dashboard</span>
+      </a>
+      <a class="nav-item" href="#" data-section="Upload Images">
+        <svg><use href="#icon-upload"></use></svg><span>Upload Images</span>
+      </a>
+      <a class="nav-item" href="#" data-section="Patient Records">
+        <svg><use href="#icon-record"></use></svg><span>Patient Records</span>
+      </a>
+      <a class="nav-item" href="#" data-section="AI Screening">
+        <svg><use href="#icon-ai"></use></svg><span>AI Screening</span>
+      </a>
+      <a class="nav-item" href="#" data-section="Reports">
+        <svg><use href="#icon-document"></use></svg><span>Reports</span>
+      </a>
+      <a class="nav-item" href="#" data-section="Appointments">
+        <svg><use href="#icon-calendar"></use></svg><span>Appointments</span>
+      </a>
+    </nav>
+
+    <div class="menu-title resources-title">RESOURCES</div>
+
+    <nav class="side-nav">
+      <a class="nav-item" href="#" data-section="Patient Management">
+        <svg><use href="#icon-users"></use></svg><span>Patient Management</span>
+      </a>
+      <a class="nav-item" href="#" data-section="Dataset & Training">
+        <svg><use href="#icon-layers"></use></svg><span>Dataset &amp; Training</span>
+      </a>
+      <a class="nav-item" href="#" data-section="Documentation">
+        <svg><use href="#icon-book"></use></svg><span>Documentation</span>
+      </a>
+      <a class="nav-item" href="#" data-section="Support">
+        <svg><use href="#icon-support"></use></svg><span>Support</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <a class="nav-item" href="#" data-section="Clinic Settings">
+        <svg><use href="#icon-settings"></use></svg><span>Clinic Settings</span>
+      </a>
+      <a class="nav-item" href="#" data-section="Profile">
+        <svg><use href="#icon-user"></use></svg><span>Profile</span>
+      </a>
+
+      <div class="doctor-mini">
+        <div class="doctor-avatar">DN</div>
+        <div class="doctor-mini-info">
+          <strong>Dr. Neufal</strong>
+          <span>dr@eyecare.com</span>
+        </div>
+        <button class="mini-menu" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+  <main class="main">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">
+        <svg><use href="#icon-menu"></use></svg>
+      </button>
+
+      <div class="top-search">
+        <svg><use href="#icon-search"></use></svg>
+        <input id="searchInput" type="text" placeholder="Search Anything">
+        <span class="shortcut">⌘K</span>
+      </div>
+
+      <div class="top-actions">
+        <button aria-label="Help" class="icon-btn">
+          <svg><use href="#icon-help"></use></svg>
+        </button>
+        <button aria-label="Notifications" class="icon-btn notification-btn">
+          <svg><use href="#icon-bell"></use></svg>
+          <span class="notification-dot"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- PAGE HEADING -->
+      <div class="page-heading">
+        <div>
+          <h1>Dr. Retina Specialist
+            <button class="edit-title" title="Edit title">
+              <svg><use href="#icon-edit"></use></svg>
+            </button>
+          </h1>
+        </div>
+
+        <div class="doctor-clinic">
+          <div>
+            <small>Retina Specialist</small>
+            <strong>👨🏻‍⚕️ Dr. A. Sharma</strong>
+          </div>
+          <div>
+            <small>Hospital / Clinic</small>
+            <strong class="clinic-blue">🏥 City Eye Care Center</strong>
+          </div>
+          <button class="settings-square" aria-label="Settings">
+            <svg><use href="#icon-settings"></use></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+
+        <!-- ================= CENTER ================= -->
+        <section class="center-column">
+
+          <!-- SUMMARY CARDS -->
+          <div class="summary-grid">
+
+            <article class="summary-card blue-card">
+              <div class="summary-top">
+                <div class="summary-icon blue">
+                  <svg><use href="#icon-eye"></use></svg>
+                </div>
+                <button class="outline-btn">Review Now</button>
+              </div>
+              <div class="summary-label">Images to Review</div>
+              <div class="summary-bottom">
+                <strong>32</strong>
+                <span class="growth green">↑ 12%</span>
+              </div>
+              <div class="blob blue-blob"></div>
+            </article>
+
+            <article class="summary-card purple-card">
+              <div class="summary-top">
+                <div class="summary-icon purple">
+                  <svg><use href="#icon-users"></use></svg>
+                </div>
+                <button class="outline-btn">Total Patients</button>
+              </div>
+              <div class="summary-label">Total Patients</div>
+              <div class="summary-bottom">
+                <strong>21</strong>
+                <span class="growth green">↑ 8%</span>
+              </div>
+              <div class="blob purple-blob"></div>
+            </article>
+
+            <article class="summary-card orange-card">
+              <div class="summary-top">
+                <div class="summary-icon orange">
+                  <svg><use href="#icon-document"></use></svg>
+                </div>
+                <button class="outline-btn">Generate Report</button>
+              </div>
+              <div class="summary-label">Reports Today</div>
+              <div class="summary-bottom">
+                <strong>8</strong>
+                <span class="growth green">↑ 33%</span>
+              </div>
+              <div class="blob orange-blob"></div>
+            </article>
+
+          </div>
+
+          <!-- AI ASSISTANT STRIP -->
+          <section class="assistant-strip card">
+            <div class="large-icon ai-blue">
+              <svg><use href="#icon-ai"></use></svg>
+            </div>
+            <div>
+              <h2>AI Screening Assistant</h2>
+              <p>Automated detection of diabetic retinopathy from retinal images</p>
+            </div>
+            <span class="assistant-growth">+ 20% ↑</span>
+          </section>
+
+          <!-- MODEL PERFORMANCE -->
+          <section class="card model-card">
+            <div class="section-heading">
+              <div class="heading-icon">
+                <svg><use href="#icon-chart"></use></svg>
+              </div>
+              <div>
+                <h2>AI Model Performance</h2>
+                <p>Model accuracy and performance on retinal images</p>
+              </div>
+              <button class="outline-btn review-predictions">Review Predictions <span>→</span></button>
+            </div>
+
+            <div class="metrics-grid">
+              <div class="metric-card metric-blue">
+                <div class="metric-title">
+                  <span class="metric-icon"><svg><use href="#icon-target"></use></svg></span>
+                  Accuracy
+                </div>
+                <strong>93.2%</strong>
+                <span class="metric-growth">↗ +2.4% <em>from last training</em></span>
+              </div>
+
+              <div class="metric-card metric-purple">
+                <div class="metric-title">
+                  <span class="metric-icon"><svg><use href="#icon-document"></use></svg></span>
+                  Precision
+                </div>
+                <strong>91.8%</strong>
+                <span class="metric-growth">↗ +1.6% <em>from last training</em></span>
+              </div>
+
+              <div class="metric-card metric-green">
+                <div class="metric-title">
+                  <span class="metric-icon"><svg><use href="#icon-shield"></use></svg></span>
+                  Recall
+                </div>
+                <strong>92.6%</strong>
+                <span class="metric-growth">↗ +2.1% <em>from last training</em></span>
+              </div>
+
+              <div class="metric-card metric-orange">
+                <div class="metric-title">
+                  <span class="metric-icon"><svg><use href="#icon-chart"></use></svg></span>
+                  F1-Score
+                </div>
+                <strong>92.2%</strong>
+                <span class="metric-growth">↗ +1.9% <em>from last training</em></span>
+              </div>
+            </div>
+
+            <div class="training">
+              <div class="training-head">
+                <div>
+                  <strong>Model Training Progress</strong>
+                  <span>Trained on 100K+ Retinal Images</span>
+                </div>
+                <div class="training-status">
+                  <span>Epochs: 38/50</span>
+                  <b>● Training Completed</b>
+                </div>
+              </div>
+
+              <div class="axis">
+                <span>0</span><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span>
+              </div>
+
+              <div class="progress-track">
+                <div class="progress-fill"></div>
+                <div class="progress-bubble">38/50</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SCREENING STATISTICS -->
+          <section class="card statistics-card">
+            <div class="section-heading">
+              <div class="heading-icon">
+                <svg><use href="#icon-chart"></use></svg>
+              </div>
+              <div>
+                <h2>Screening Statistics</h2>
+                <p>Overview of screening results and follow-up actions</p>
+              </div>
+              <button class="outline-btn">See Details</button>
+            </div>
+
+            <div class="stats-grid">
+
+              <div class="stat-box stat-blue">
+                <div class="stat-title">Images Screened</div>
+                <div class="stat-value-row">
+                  <strong>84</strong>
+                  <span>↑ 12%</span>
+                </div>
+                <div class="mini-chart line-chart">
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="stat-badge">
+                  <svg><use href="#icon-location"></use></svg>
+                  Out of 70 Clinics
+                </div>
+              </div>
+
+              <div class="stat-box stat-red">
+                <div class="stat-title">Positive Cases</div>
+                <div class="stat-value-row">
+                  <strong>32</strong>
+                  <span class="down">↓ -8%</span>
+                </div>
+                <div class="bar-mini">
+                  <i style="height:25%"></i><i style="height:42%"></i><i style="height:68%"></i>
+                  <i style="height:52%"></i><i style="height:78%"></i><i style="height:48%"></i>
+                  <i style="height:30%"></i><i style="height:42%"></i>
+                </div>
+                <div class="stat-badge">
+                  <svg><use href="#icon-document"></use></svg>
+                  Mild / Moderate / Severe
+                </div>
+              </div>
+
+              <div class="stat-box stat-purple">
+                <div class="stat-title">Follow-up Recommended</div>
+                <div class="stat-value-row">
+                  <strong>48</strong>
+                  <span>↑ 15%</span>
+                </div>
+                <div class="mini-chart line-chart purple-line">
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="stat-badge">
+                  <svg><use href="#icon-calendar"></use></svg>
+                  80% Open Rate
+                </div>
+              </div>
+
+              <div class="stat-box stat-yellow">
+                <div class="stat-title">Referred to Specialist</div>
+                <div class="stat-value-row">
+                  <strong>16</strong>
+                  <span class="down">↓ -5%</span>
+                </div>
+                <div class="bar-mini yellow-bars">
+                  <i style="height:58%"></i><i style="height:32%"></i><i style="height:68%"></i>
+                  <i style="height:40%"></i><i style="height:75%"></i><i style="height:34%"></i>
+                  <i style="height:52%"></i>
+                </div>
+                <div class="stat-badge">
+                  <svg><use href="#icon-trophy"></use></svg>
+                  Breaking Records!
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+        </section>
+
+        <!-- ================= RIGHT COLUMN ================= -->
+        <aside class="right-column">
+
+          <!-- FOLLOW UP -->
+          <section class="card follow-card">
+            <div class="follow-head">
+              <div class="follow-title">
+                <span class="heart-icon">
+                  <svg><use href="#icon-heart"></use></svg>
+                </span>
+                <div>
+                  <h2>To Follow Up</h2>
+                  <span>10</span>
+                </div>
+              </div>
+              <button class="outline-btn">See All</button>
+            </div>
+
+            <div class="patient-list">
+
+              <div class="patient">
+                <div class="patient-avatar avatar-pink">TP</div>
+                <div class="patient-info">
+                  <strong>Tonia Powers</strong>
+                  <span>Mild DR Detected</span>
+                </div>
+                <span class="new-pill">New</span>
+                <span class="arrow">›</span>
+              </div>
+
+              <div class="patient">
+                <div class="patient-avatar avatar-green">LG</div>
+                <div class="patient-info">
+                  <strong>Luis Gonzales</strong>
+                  <span>Normal - Annual Checkup</span>
+                </div>
+                <span class="arrow">›</span>
+              </div>
+
+              <div class="patient">
+                <div class="patient-avatar avatar-orange">AG</div>
+                <div class="patient-info">
+                  <strong>Adam Goodlin</strong>
+                  <span>Moderate DR Detected</span>
+                </div>
+                <span class="new-pill">New</span>
+                <span class="arrow">›</span>
+              </div>
+
+              <div class="patient">
+                <div class="patient-avatar avatar-purple">MM</div>
+                <div class="patient-info">
+                  <strong>Michael Martinez</strong>
+                  <span>Refer to Ophthalmologist</span>
+                </div>
+                <span class="arrow">›</span>
+              </div>
+
+              <div class="patient faded">
+                <div class="patient-avatar avatar-gray">TB</div>
+                <div class="patient-info">
+                  <strong>Tracia Brown</strong>
+                  <span>Follow-up required</span>
+                </div>
+                <span class="arrow">›</span>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- AI DOCTOR -->
+          <section class="card ai-doctor-card">
+            <div class="ai-header">
+              <div class="robot">
+                <svg><use href="#icon-robot"></use></svg>
+              </div>
+              <h2>AI Doctor Assistant</h2>
+            </div>
+
+            <div class="ai-body">
+              <p class="ai-welcome">👋 <strong>Let's make diabetic retinopathy screening easier!</strong></p>
+              <p class="ai-question">What would you like to do today?</p>
+              <p class="ai-examples">
+                Example: "Analyze this retinal image", "Show high-risk patients",
+                "Generate screening report"
+              </p>
+
+              <button class="assistant-option">
+                AI Assistant for<br>
+                Diabetic Retinopathy Screening
+              </button>
+
+              <div class="ai-input">
+                <svg><use href="#icon-mic"></use></svg>
+                <input id="aiInput" type="text" placeholder="Ask AI about images, patients, reports...">
+              </div>
+
+              <button class="ask-ai" id="askAi">Ask AI ✨</button>
+              <div id="aiResponse" class="ai-response"></div>
+            </div>
+          </section>
+
+        </aside>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ================= SVG ICON DEFINITIONS ================= -->
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-definitions">
+  <symbol id="icon-home" viewBox="0 0 24 24">
+    <path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M9 21v-7h6v7"></path>
+  </symbol>
+
+  <symbol id="icon-upload" viewBox="0 0 24 24">
+    <path d="M12 16V4"></path><path d="m7 9 5-5 5 5"></path><path d="M4 14v5h16v-5"></path>
+  </symbol>
+
+  <symbol id="icon-users" viewBox="0 0 24 24">
+    <circle cx="9" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.5"></circle>
+    <path d="M3 20c0-3.5 2.5-5.5 6-5.5s6 2 6 5.5"></path><path d="M15 14.5c3 0 5 1.8 5 4.5"></path>
+  </symbol>
+
+  <symbol id="icon-record" viewBox="0 0 24 24">
+    <rect x="3" y="6" width="18" height="14" rx="2"></rect><path d="M8 6V4h8v2"></path>
+    <path d="M8 13h8"></path><path d="M12 10v6"></path>
+  </symbol>
+
+  <symbol id="icon-ai" viewBox="0 0 24 24">
+    <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"></path>
+  </symbol>
+
+  <symbol id="icon-document" viewBox="0 0 24 24">
+    <path d="M6 2h9l4 4v16H6z"></path><path d="M14 2v5h5"></path>
+    <path d="M9 12h6"></path><path d="M9 16h6"></path>
+  </symbol>
+
+  <symbol id="icon-calendar" viewBox="0 0 24 24">
+    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+    <path d="M7 3v4"></path><path d="M17 3v4"></path><path d="M3 10h18"></path>
+  </symbol>
+
+  <symbol id="icon-layers" viewBox="0 0 24 24">
+    <path d="m12 3 9 5-9 5-9-5 9-5Z"></path><path d="m3 12 9 5 9-5"></path><path d="m3 16 9 5 9-5"></path>
+  </symbol>
+
+  <symbol id="icon-book" viewBox="0 0 24 24">
+    <path d="M4 4h6c2 0 3 1 3 3v13c0-2-1-3-3-3H4z"></path>
+    <path d="M20 4h-6c-2 0-3 1-3 3v13c0-2 1-3 3-3h6z"></path>
+  </symbol>
+
+  <symbol id="icon-support" viewBox="0 0 24 24">
+    <path d="M4 13a8 8 0 0 1 16 0"></path>
+    <path d="M4 13v5a2 2 0 0 0 2 2h2v-7H4Z"></path>
+    <path d="M20 13v5a2 2 0 0 1-2 2h-2v-7h4Z"></path>
+    <path d="M16 20c0 1-1 2-3 2"></path>
+  </symbol>
+
+  <symbol id="icon-settings" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="3"></circle>
+    <path d="M19.4 15a1.8 1.8 0 0 0 .4 2l.1.1-2 2-.1-.1a1.8 1.8 0 0 0-2-.4 1.8 1.8 0 0 0-1.1 1.6V20h-3v-.2a1.8 1.8 0 0 0-1.1-1.6 1.8 1.8 0 0 0-2 .4l-.1.1-2-2 .1-.1a1.8 1.8 0 0 0 .4-2A1.8 1.8 0 0 0 5.4 13H5v-3h.4a1.8 1.8 0 0 0 1.6-1.1 1.8 1.8 0 0 0-.4-2l-.1-.1 2-2 .1.1a1.8 1.8 0 0 0 2 .4A1.8 1.8 0 0 0 11.7 3H12"></path>
+  </symbol>
+
+  <symbol id="icon-user" viewBox="0 0 24 24">
+    <circle cx="12" cy="8" r="3.5"></circle><path d="M5 21c0-4 3-6.5 7-6.5s7 2.5 7 6.5"></path>
+  </symbol>
+
+  <symbol id="icon-eye" viewBox="0 0 24 24">
+    <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path>
+    <circle cx="12" cy="12" r="3"></circle>
+  </symbol>
+
+  <symbol id="icon-chart" viewBox="0 0 24 24">
+    <path d="M5 20V11"></path><path d="M12 20V5"></path><path d="M19 20V8"></path><path d="M3 20h18"></path>
+  </symbol>
+
+  <symbol id="icon-target" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4"></circle><circle cx="12" cy="12" r="1"></circle>
+  </symbol>
+
+  <symbol id="icon-shield" viewBox="0 0 24 24">
+    <path d="M12 3 20 6v5c0 5-3.3 8.5-8 10-4.7-1.5-8-5-8-10V6l8-3Z"></path><path d="m8 12 2.5 2.5L16 9"></path>
+  </symbol>
+
+  <symbol id="icon-heart" viewBox="0 0 24 24">
+    <path d="M20.8 8.8c0 5.5-8.8 11-8.8 11S3.2 14.3 3.2 8.8A5 5 0 0 1 12 6a5 5 0 0 1 8.8 2.8Z"></path>
+  </symbol>
+
+  <symbol id="icon-robot" viewBox="0 0 24 24">
+    <rect x="4" y="7" width="16" height="12" rx="3"></rect><path d="M12 3v4"></path>
+    <circle cx="9" cy="12" r="1"></circle><circle cx="15" cy="12" r="1"></circle><path d="M8 16h8"></path>
+  </symbol>
+
+  <symbol id="icon-mic" viewBox="0 0 24 24">
+    <rect x="8" y="3" width="8" height="12" rx="4"></rect><path d="M5 11a7 7 0 0 0 14 0"></path>
+    <path d="M12 18v3"></path><path d="M9 21h6"></path>
+  </symbol>
+
+  <symbol id="icon-search" viewBox="0 0 24 24">
+    <circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path>
+  </symbol>
+
+  <symbol id="icon-bell" viewBox="0 0 24 24">
+    <path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path>
+  </symbol>
+
+  <symbol id="icon-help" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.6 2.6 0 1 1 4.5 1.8c-1.2 1-2 1.4-2 3"></path><circle cx="12" cy="17" r=".7"></circle>
+  </symbol>
+
+  <symbol id="icon-edit" viewBox="0 0 24 24">
+    <path d="m4 20 4.5-1 10-10-3.5-3.5-10 10L4 20Z"></path><path d="m13.5 6.5 3.5 3.5"></path>
+  </symbol>
+
+  <symbol id="icon-location" viewBox="0 0 24 24">
+    <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle>
+  </symbol>
+
+  <symbol id="icon-trophy" viewBox="0 0 24 24">
+    <path d="M7 4h10v4c0 4-2 6-5 6s-5-2-5-6V4Z"></path>
+    <path d="M7 6H3v2c0 3 2 5 5 5"></path><path d="M17 6h4v2c0 3-2 5-5 5"></path>
+    <path d="M12 14v4"></path><path d="M8 21h8"></path>
+  </symbol>
+
+  <symbol id="icon-menu" viewBox="0 0 24 24">
+    <path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path>
+  </symbol>
+</svg>
+
+<script src="dashbord.js"></script>
+</body>
+</html>
