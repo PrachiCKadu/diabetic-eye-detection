@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dia Vision | Patient Dashboard</title>
+
+    <link rel="stylesheet" href="patient.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                <img src="img/patient_dash.png"
+                     alt="Dia Vision Logo">
+            </div>
+
+            <div class="brand-name">
+                <span class="dia">Dia</span>
+                <span class="vision">Vision</span>
+            </div>
+
+        </div>
+
+
+        <div class="menu-title">
+            MAIN MENU
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+            <button class="menu-item active" data-section="dashboard">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </button>
+
+            <button class="menu-item" data-section="upload">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <span>Upload Image</span>
+            </button>
+
+            <button class="menu-item" data-section="screening">
+                <i class="fa-solid fa-eye"></i>
+                <span>AI Screening</span>
+            </button>
+
+            <button class="menu-item" data-section="reports">
+                <i class="fa-solid fa-file-medical"></i>
+                <span>My Reports</span>
+            </button>
+
+            <button class="menu-item" data-section="history">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>Screening History</span>
+            </button>
+
+            <button class="menu-item" data-section="appointments">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Appointments</span>
+            </button>
+
+        </nav>
+
+
+        <div class="menu-title resources-title">
+            ACCOUNT
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+            <button class="menu-item" data-section="doctor">
+                <i class="fa-solid fa-user-doctor"></i>
+                <span>My Doctor</span>
+            </button>
+
+            <button class="menu-item" data-section="settings">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="patient-mini">
+
+                <div class="patient-avatar">
+                    JD
+                </div>
+
+                <div class="patient-mini-info">
+                    <strong>John Doe</strong>
+                    <small>Patient</small>
+                </div>
+
+                <i class="fa-solid fa-ellipsis"></i>
+
+            </div>
+
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <button class="mobile-menu" id="mobileMenu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text"
+                       id="searchInput"
+                       placeholder="Search anything">
+
+                <span class="shortcut">⌘K</span>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <button class="icon-btn">
+                    <i class="fa-regular fa-circle-question"></i>
+                </button>
+
+                <button class="icon-btn notification-btn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="top-profile">
+
+                    <div class="profile-avatar">
+                        JD
+                    </div>
+
+                    <div>
+                        <strong>John Doe</strong>
+                        <small>Patient</small>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="content">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+                <div>
+
+                    <p class="welcome-text">
+                        Welcome back 👋
+                    </p>
+
+                    <h1>
+                        Hello, John Doe
+                    </h1>
+
+                    <p class="page-description">
+                        Monitor your eye health with AI-powered diabetic retinopathy screening.
+                    </p>
+
+                </div>
+
+
+                <button class="primary-btn" id="startScreeningBtn">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Start New Screening
+
+                </button>
+
+            </div>
+
+
+            <!-- ================= STAT CARDS ================= -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card blue-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon blue">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+
+                        <span class="status-pill green">
+                            Completed
+                        </span>
+
+                    </div>
+
+                    <p>Latest Screening</p>
+
+                    <h2>28 Sep 2026</h2>
+
+                    <button class="text-btn" data-section="screening">
+                        View Result
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="stat-card purple-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon purple">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+
+                        <span class="status-pill green">
+                            94.2%
+                        </span>
+
+                    </div>
+
+                    <p>AI Confidence</p>
+
+                    <h2>No DR Detected</h2>
+
+                    <button class="text-btn" data-section="screening">
+                        View Details
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="stat-card orange-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon orange">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <span class="status-pill blue">
+                            Total
+                        </span>
+
+                    </div>
+
+                    <p>Total Screenings</p>
+
+                    <h2>05</h2>
+
+                    <button class="text-btn" data-section="history">
+                        View History
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="stat-card green-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon green">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+
+                        <span class="status-pill purple">
+                            Upcoming
+                        </span>
+
+                    </div>
+
+                    <p>Next Appointment</p>
+
+                    <h2>04 Oct 2026</h2>
+
+                    <button class="text-btn" data-section="appointments">
+                        View Appointment
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= TWO COLUMN ================= -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- LEFT -->
+
+                <div class="left-column">
+
+
+                    <!-- AI SCREENING -->
+
+                    <section class="panel screening-panel" id="uploadSection">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <div class="panel-title">
+
+                                    <div class="panel-icon">
+                                        <i class="fa-solid fa-bolt"></i>
+                                    </div>
+
+                                    <div>
+                                        <h2>AI Eye Screening</h2>
+
+                                        <p>
+                                            Upload your retinal image for automated classification
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <span class="ai-badge">
+                                AI Powered
+                            </span>
+
+                        </div>
+
+
+                        <div class="upload-area" id="uploadArea">
+
+                            <div class="upload-icon">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                            </div>
+
+                            <h3>
+                                Upload Retinal Image
+                            </h3>
+
+                            <p>
+                                Drag & drop your fundus image here
+                            </p>
+
+                            <span class="or">
+                                or
+                            </span>
+
+                            <label class="upload-btn">
+
+                                <i class="fa-solid fa-folder-open"></i>
+
+                                Choose Image
+
+                                <input type="file"
+                                       id="imageInput"
+                                       accept="image/png,image/jpeg,image/jpg"
+                                       hidden>
+
+                            </label>
+
+                            <small>
+                                Supported: JPG, JPEG, PNG • Max 10MB
+                            </small>
+
+                        </div>
+
+
+                        <!-- IMAGE PREVIEW -->
+
+                        <div class="preview-area hidden" id="previewArea">
+
+                            <div class="preview-image-container">
+
+                                <img id="previewImage"
+                                     src=""
+                                     alt="Retinal image preview">
+
+                            </div>
+
+
+                            <div class="preview-info">
+
+                                <h3 id="fileName">
+                                    Retinal Image
+                                </h3>
+
+                                <p id="fileSize">
+                                    Image ready for screening
+                                </p>
+
+
+                                <div class="preview-actions">
+
+                                    <button class="secondary-btn"
+                                            id="removeImage">
+
+                                        <i class="fa-solid fa-trash"></i>
+
+                                        Remove
+
+                                    </button>
+
+
+                                    <button class="primary-btn"
+                                            id="analyzeBtn">
+
+                                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                                        Analyze Image
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- LOADING -->
+
+                        <div class="analysis-loading hidden"
+                             id="analysisLoading">
+
+                            <div class="spinner"></div>
+
+                            <h3>
+                                AI is analyzing your retinal image...
+                            </h3>
+
+                            <p>
+                                Please wait while the optimized deep convolutional model processes the image.
+                            </p>
+
+                        </div>
+
+
+                        <!-- RESULT -->
+
+                        <div class="prediction-result hidden"
+                             id="predictionResult">
+
+                            <div class="result-header">
+
+                                <div class="result-icon success">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        AI Screening Completed
+                                    </span>
+
+                                    <h3>
+                                        No Diabetic Retinopathy Detected
+                                    </h3>
+
+                                </div>
+
+                                <div class="confidence">
+
+                                    <strong>
+                                        94.2%
+                                    </strong>
+
+                                    <span>
+                                        Confidence
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="confidence-bar">
+
+                                <div class="confidence-progress"
+                                     style="width:94.2%">
+                                </div>
+
+                            </div>
+
+
+                            <div class="result-actions">
+
+                                <button class="secondary-btn"
+                                        id="newScreeningBtn">
+
+                                    <i class="fa-solid fa-rotate"></i>
+
+                                    New Screening
+
+                                </button>
+
+                                <button class="primary-btn"
+                                        id="reportBtn">
+
+                                    <i class="fa-solid fa-file-pdf"></i>
+
+                                    View Detailed Report
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- SCREENING HISTORY -->
+
+                    <section class="panel" id="historySection">
+
+                        <div class="panel-header">
+
+                            <div class="panel-title">
+
+                                <div class="panel-icon blue-icon">
+                                    <i class="fa-solid fa-clock-rotate-left"></i>
+                                </div>
+
+                                <div>
+
+                                    <h2>Screening History</h2>
+
+                                    <p>
+                                        Your recent AI screening results
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <button class="secondary-btn">
+                                View All
+                            </button>
+
+                        </div>
+
+
+                        <div class="history-table-wrapper">
+
+                            <table class="history-table">
+
+                                <thead>
+
+                                <tr>
+
+                                    <th>Date</th>
+                                    <th>Screening</th>
+                                    <th>Prediction</th>
+                                    <th>Confidence</th>
+                                    <th>Report</th>
+
+                                </tr>
+
+                                </thead>
+
+
+                                <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        <strong>28 Sep 2026</strong>
+                                        <small>10:42 AM</small>
+                                    </td>
+
+                                    <td>
+                                        <div class="table-image">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </div>
+                                        Retinal Screening
+                                    </td>
+
+                                    <td>
+                                        <span class="result-tag normal">
+                                            No DR Detected
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        94.2%
+                                    </td>
+
+                                    <td>
+                                        <button class="table-btn">
+                                            <i class="fa-solid fa-file-lines"></i>
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <strong>15 Aug 2026</strong>
+                                        <small>02:18 PM</small>
+                                    </td>
+
+                                    <td>
+                                        <div class="table-image">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </div>
+                                        Retinal Screening
+                                    </td>
+
+                                    <td>
+                                        <span class="result-tag mild">
+                                            Mild DR
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        89.6%
+                                    </td>
+
+                                    <td>
+                                        <button class="table-btn">
+                                            <i class="fa-solid fa-file-lines"></i>
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <strong>10 Jul 2026</strong>
+                                        <small>11:05 AM</small>
+                                    </td>
+
+                                    <td>
+                                        <div class="table-image">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </div>
+                                        Retinal Screening
+                                    </td>
+
+                                    <td>
+                                        <span class="result-tag normal">
+                                            No DR Detected
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        92.8%
+                                    </td>
+
+                                    <td>
+                                        <button class="table-btn">
+                                            <i class="fa-solid fa-file-lines"></i>
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- ================= RIGHT COLUMN ================= -->
+
+                <div class="right-column">
+
+
+                    <!-- APPOINTMENT -->
+
+                    <section class="panel appointment-card"
+                             id="appointmentsSection">
+
+                        <div class="panel-header">
+
+                            <div class="panel-title">
+
+                                <div class="panel-icon purple-icon">
+                                    <i class="fa-solid fa-calendar-check"></i>
+                                </div>
+
+                                <div>
+
+                                    <h2>Next Appointment</h2>
+
+                                    <p>
+                                        Your upcoming consultation
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="doctor-box">
+
+                            <div class="doctor-avatar">
+                                AS
+                            </div>
+
+                            <div class="doctor-info">
+
+                                <h3>
+                                    Dr. A. Sharma
+                                </h3>
+
+                                <p>
+                                    Retina Specialist
+                                </p>
+
+                                <span>
+                                    City Eye Care Center
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="appointment-details">
+
+                            <div>
+
+                                <i class="fa-regular fa-calendar"></i>
+
+                                <span>
+                                    04 October 2026
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <i class="fa-regular fa-clock"></i>
+
+                                <span>
+                                    10:30 AM
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <button class="primary-btn full-btn">
+
+                            <i class="fa-solid fa-calendar-check"></i>
+
+                            View Appointment
+
+                        </button>
+
+                    </section>
+
+
+                    <!-- HEALTH SUMMARY -->
+
+                    <section class="panel health-panel">
+
+                        <div class="panel-header">
+
+                            <div class="panel-title">
+
+                                <div class="panel-icon green-icon">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                </div>
+
+                                <div>
+
+                                    <h2>Eye Health Summary</h2>
+
+                                    <p>
+                                        Based on your recent screenings
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="health-score">
+
+                            <div class="score-circle">
+
+                                <div>
+                                    <strong>94</strong>
+                                    <span>/100</span>
+                                </div>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Good
+                                </h3>
+
+                                <p>
+                                    Your latest screening shows no signs of diabetic retinopathy.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="health-items">
+
+                            <div class="health-item">
+
+                                <span>
+                                    Latest Result
+                                </span>
+
+                                <strong>
+                                    No DR Detected
+                                </strong>
+
+                            </div>
+
+
+                            <div class="health-item">
+
+                                <span>
+                                    AI Confidence
+                                </span>
+
+                                <strong>
+                                    94.2%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="health-item">
+
+                                <span>
+                                    Screenings
+                                </span>
+
+                                <strong>
+                                    05
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- DOCTOR -->
+
+                    <section class="panel doctor-panel"
+                             id="doctorSection">
+
+                        <div class="panel-header">
+
+                            <div class="panel-title">
+
+                                <div class="panel-icon orange-icon">
+                                    <i class="fa-solid fa-user-doctor"></i>
+                                </div>
+
+                                <div>
+
+                                    <h2>My Doctor</h2>
+
+                                    <p>
+                                        Your assigned specialist
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="assigned-doctor">
+
+                            <div class="doctor-avatar large">
+                                AS
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Dr. A. Sharma
+                                </h3>
+
+                                <p>
+                                    Retina Specialist
+                                </p>
+
+                                <span class="online">
+                                    <i class="fa-solid fa-circle"></i>
+                                    Available
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <button class="secondary-btn full-btn">
+                            <i class="fa-solid fa-message"></i>
+                            Contact Doctor
+                        </button>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= INFORMATION ================= -->
+
+            <section class="info-banner">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        About AI Screening
+                    </h3>
+
+                    <p>
+                        Dia Vision uses an optimized deep convolutional model
+                        to assist in automated classification of diabetic eye
+                        diseases from retinal images.
+                    </p>
+
+                </div>
+
+                <button class="secondary-btn">
+                    Learn More
+                </button>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="patient.js"></script>
+
+</body>
+</html>
